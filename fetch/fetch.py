@@ -9,7 +9,11 @@ import urllib.parse
 def main():
     urls = parseUrlsToList()
     for url in urls:
-        fetchAndSaveWebPage(url)
+        try:
+            fetchAndSaveWebPage(url)
+        except Exception as e:
+            print(url)
+            print(e)
 
 
 def parseUrlsToList():
